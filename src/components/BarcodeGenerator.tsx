@@ -79,7 +79,7 @@ export default function BarcodeGenerator() {
     }
   }
 
-  function formatClubcardNumber(number: string) {
+  function formatclubcardNumber(number: string) {
     if (number.length <= 6) {
       return number;
     }
@@ -90,7 +90,7 @@ export default function BarcodeGenerator() {
   return (
     <section className={styles.screen} aria-labelledby="clubcard-title">
       <header className={styles.header}>
-        <span className={styles.back} aria-hidden="true"></span>
+        <a className={styles.back} href="/help" aria-label="Back to help"></a>
         <h1 id="clubcard-title">Your Clubcard</h1>
       </header>
 
@@ -112,16 +112,16 @@ export default function BarcodeGenerator() {
           </div>
 
           <label className={styles.visuallyHidden} htmlFor="clubcard-number">
-            Clubcard number
+            clubcard number
           </label>
           <input
             className={styles.number}
             id="clubcard-number"
             name="clubcard-number"
             type="text"
-            value={formatClubcardNumber(value)}
+            value={formatclubcardNumber(value)}
             onChange={(event) => updateValue(event.target.value)}
-            placeholder="Tap here to enter Clubcard number"
+            placeholder="Tap here to enter clubcard number"
             inputMode="numeric"
             autoComplete="off"
             autoCapitalize="none"
@@ -141,7 +141,7 @@ export default function BarcodeGenerator() {
 
           <div className={styles.scanCopy}>
             <strong>Scan at the till</strong>
-            <span>To collect Clubcard points</span>
+            <span>To collect clubcard points</span>
           </div>
         </article>
 

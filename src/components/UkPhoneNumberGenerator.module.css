@@ -1,0 +1,49 @@
+.generator {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #f1f5f8;
+}
+
+.generator h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.number {
+  color: #0057a6;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 12px 16px;
+  border: 2px solid #0057a6;
+  border-radius: 999px;
+  color: #0057a6;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actions button:last-child {
+  color: #fff;
+  background: #0057a6;
+}
+
+.generator p {
+  margin: 0;
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}

@@ -1,0 +1,247 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import UkPhoneNumberGenerator from "../components/UkPhoneNumberGenerator";
+---
+
+<AppLayout title="Help" description="Help using your clubcard barcode.">
+  <script is:inline>
+    try {
+      localStorage.setItem("lastCheckedHelp", Date.now().toString());
+    } catch {
+      // The help page still works when browser storage is unavailable.
+    }
+  </script>
+
+  <section class="screen" aria-labelledby="help-title">
+    <header class="header">
+      <div class="title-row">
+        <h1 id="help-title">Appless Tesc* UK</h1>
+        <a class="card-link" href="/" aria-label="View your clubcard">
+          <span class="card-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <img class="logo" src="/logo.jpg" alt="" width="512" height="512" />
+    </header>
+
+    <div class="content">
+      <article class="card">
+        <h2>No more app!</h2>
+        <ol>
+          <li>Enter your clubcard number.</li>
+          <li>Scan the barcode at the till to collect clubcard points and get member-only discounts.</li>
+        </ol>
+
+        <p>
+          Your clubcard number stays in your browser and is not sent anywhere.
+        </p>
+
+        <a class="button" href="/">Open clubcard barcode</a>
+      </article>
+      <br />
+      <article class="card">
+        <h2>How do I get a new clubcard?</h2>
+        <ol>
+          <li>
+            Visit <a
+              href="https://www.tesco.com/account/register/en-GB/"
+              target="_blank"
+              rel="noopener noreferrer">tesco.com/account/register/en-GB/</a
+            > to get started. Fill in a real email address that you can access.
+          </li>
+          <li>
+            Enter the required information on the page. You do not need a valid
+            UK (+44) phone number. If you don't have one, just make up one.
+
+            <UkPhoneNumberGenerator client:only="react" />
+          </li>
+          <li>
+            You can also enter any address. If you don't have a postal address,
+            you can use any or mine at "Winfield House, Outer Circle, Regents
+            Park, London, NW1 4RT".
+          </li>
+          <li>
+            You'll receive an email with your clubcard number. Copy it and paste
+            into the card number field.
+          </li>
+        </ol>
+      </article>
+      <br />
+      <article class="card">
+        <h2>Why do I need this?</h2>
+        <p>
+          Tesc* doesn't allow you to view your clubcard barcode directly on
+          their website. The till does not allow you to enter your phone number
+          or clubcard number to take advantage of their discounts. You also
+          cannot download the app unless you have your app store location set to
+          United Kingdom.
+        </p>
+        <p>
+          You may also dislike using their app. This website is a lightweight
+          alternative that works on any modern mobile browser and allows you to
+          view your clubcard barcode without needing to use the official app or
+          website.
+        </p>
+      </article>
+      <br />
+      <article class="card">
+        <h2>Why did you make this?</h2>
+        <p>
+          Visitors need to switch to the United Kingdom app store region to
+          download the official app. This can be a hassle.
+        </p>
+        <p>
+          Additionally, this demonstrates you do not need a valid local phone
+          number or address to register for a clubcard.
+        </p>
+        <p>
+          As of June 2026, this page still works as expected, but Tesc* may
+          update their policies to change registration or update barcode
+          formats. Enjoy while it lasts!
+        </p>
+        <p>
+          Source code is available on <a
+            href="https://github.com/angushtlam/appless-tesco-uk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub</a
+          >.
+        </p>
+        <p>
+          Want to contact me? Message me on <a
+            href="https://www.instagram.com/angustofar"
+            target="_blank"
+            rel="noopener noreferrer">Instagram</a
+          > or <a
+            href="https://www.tiktok.com/@angustofar"
+            target="_blank"
+            rel="noopener noreferrer">TikTok</a
+          >.
+        </p>
+        <p>
+          ©️ Angus Lam 2026. Find my other projects on <a
+            href="https://anguslam.com"
+            target="_blank"
+            rel="noopener noreferrer">anguslam.com</a
+          >
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <style>
+    .screen {
+      min-height: inherit;
+      color: #fff;
+      background: #0057a6;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title-row {
+      position: relative;
+      display: grid;
+      width: 100%;
+      min-height: 88px;
+      place-items: center;
+      padding: max(18px, env(safe-area-inset-top)) 64px 16px;
+      border-bottom: 1px solid rgb(255 255 255 / 12%);
+    }
+
+    .logo {
+      display: block;
+      width: 96px;
+      height: 96px;
+      margin: 22px 0;
+      border-radius: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .card-link {
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      display: grid;
+      width: 32px;
+      height: 26px;
+      place-items: center;
+      color: inherit;
+      transform: translateY(-50%);
+    }
+
+    .card-icon {
+      position: relative;
+      display: block;
+      width: 28px;
+      height: 20px;
+      border: 2px solid currentColor;
+      border-radius: 3px;
+    }
+
+    .card-icon::before {
+      position: absolute;
+      top: 4px;
+      right: 3px;
+      left: 3px;
+      height: 3px;
+      background: currentColor;
+      content: "";
+    }
+
+    .content {
+      padding: 18px max(16px, env(safe-area-inset-right))
+        max(28px, env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
+    }
+
+    .card {
+      padding: clamp(28px, 8vw, 42px) 24px 28px;
+      border-radius: 28px;
+      color: #2d2d2d;
+      background: #fff;
+    }
+
+    .card h2 {
+      margin: 0 0 24px;
+      font-size: 1.55rem;
+      line-height: 1.1;
+    }
+
+    .card ol {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding-left: 24px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .card p {
+      margin: 28px 0 0;
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: block;
+      margin-top: 32px;
+      padding: 15px 20px;
+      border-radius: 999px;
+      color: #fff;
+      background: #0057a6;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+</AppLayout>

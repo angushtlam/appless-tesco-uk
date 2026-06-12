@@ -1,6 +1,5 @@
 .screen {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: inherit;
   color: #fff;
   background: #0057a6;
 }
@@ -21,17 +20,18 @@
   margin: 0;
   font-size: 1.45rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
 }
 
 .back {
   position: absolute;
+  display: block;
   left: 22px;
   bottom: 28px;
   width: 18px;
   height: 18px;
   border-bottom: 3px solid currentColor;
   border-left: 3px solid currentColor;
+  color: inherit;
   transform: rotate(45deg);
 }
 

@@ -1,6 +1,6 @@
-# Appless Tesco UK
+# Appless Tesc* UK
 
-A mobile-first Astro web app.
+This website allows you to access your UK Tesc* clubcard without downloading its app. Enter your clubcard number and the barcode will be available for scanning.
 
 ## Commands
 

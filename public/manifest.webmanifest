@@ -1,7 +1,7 @@
 {
-  "name": "Appless Tesco UK",
-  "short_name": "Appless",
-  "description": "A lightweight, mobile-first Tesco companion.",
+  "name": "Appless Tesc* UK",
+  "short_name": "Tesc*",
+  "description": "A lightweight Tesc* companion website.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

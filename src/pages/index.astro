@@ -4,10 +4,29 @@ import AppLayout from "../layouts/AppLayout.astro";
 ---
 
 <AppLayout
-  title="Your Clubcard"
-  description="Your Clubcard barcode."
+  title="Your clubcard"
+  description="Your clubcard barcode"
 >
-  <main class="clubcard-screen">
-    <BarcodeGenerator client:load />
-  </main>
+  <script is:inline>
+    try {
+      const lastCheckedHelp = Number(
+        localStorage.getItem("lastCheckedHelp"),
+      );
+      const clubcardNumber =
+        localStorage.getItem("appless-clubcard-number") ?? "";
+      const oneDay = 24 * 60 * 60 * 1000;
+
+      if (
+        (!lastCheckedHelp ||
+        Date.now() - lastCheckedHelp > oneDay) &&
+        clubcardNumber.length < 6
+      ) {
+        window.location.replace("/help");
+      }
+    } catch {
+      // Continue to the clubcard when browser storage is unavailable.
+    }
+  </script>
+
+  <BarcodeGenerator client:load />
 </AppLayout>
