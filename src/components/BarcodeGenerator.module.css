@@ -104,6 +104,10 @@
   letter-spacing: 0;
 }
 
+.number:placeholder-shown {
+  background: #ffeb3b;
+}
+
 .number:focus {
   box-shadow: 0 2px 0 #0057a6;
 }

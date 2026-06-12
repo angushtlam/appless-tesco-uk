@@ -79,7 +79,7 @@ export default function BarcodeGenerator() {
     }
   }
 
-  function formatclubcardNumber(number: string) {
+  function formatClubcardNumber(number: string) {
     if (number.length <= 6) {
       return number;
     }
@@ -112,16 +112,16 @@ export default function BarcodeGenerator() {
           </div>
 
           <label className={styles.visuallyHidden} htmlFor="clubcard-number">
-            clubcard number
+            Clubcard number
           </label>
           <input
             className={styles.number}
             id="clubcard-number"
             name="clubcard-number"
             type="text"
-            value={formatclubcardNumber(value)}
+            value={formatClubcardNumber(value)}
             onChange={(event) => updateValue(event.target.value)}
-            placeholder="Tap here to enter clubcard number"
+            placeholder="Tap here to enter Clubcard number"
             inputMode="numeric"
             autoComplete="off"
             autoCapitalize="none"
@@ -141,7 +141,7 @@ export default function BarcodeGenerator() {
 
           <div className={styles.scanCopy}>
             <strong>Scan at the till</strong>
-            <span>To collect clubcard points</span>
+            <span>To collect Clubcard points</span>
           </div>
         </article>
 
