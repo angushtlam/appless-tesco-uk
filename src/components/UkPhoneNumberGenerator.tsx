@@ -26,8 +26,11 @@ export default function UkPhoneNumberGenerator() {
   }
 
   return (
-    <section className={styles.generator} aria-labelledby="phone-generator-title">
-      <h3 id="phone-generator-title">UK phone number generator</h3>
+    <section
+      className={styles.generator}
+      aria-labelledby="phone-generator-title"
+    >
+      <h3 id="phone-generator-title">Example UK phone number</h3>
       <output className={styles.number} aria-live="polite">
         {phoneNumber}
       </output>
@@ -40,7 +43,9 @@ export default function UkPhoneNumberGenerator() {
         </button>
       </div>
       <p>
-        This number prefix is in an unallocated range, so theoretically does not belong to anyone.
+        For formatting reference only. This is in an unallocated phone number
+        range. Do not use this where accurate or verifiable contact information
+        is required.
       </p>
     </section>
   );

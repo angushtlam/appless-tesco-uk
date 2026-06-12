@@ -5,42 +5,54 @@
 }
 
 .header {
-  position: relative;
   display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
   min-height: 88px;
-  place-items: center;
+  align-items: center;
   padding:
-    max(18px, env(safe-area-inset-top))
-    24px
-    16px;
+    calc(18px + env(safe-area-inset-top))
+    calc(8px + env(safe-area-inset-right))
+    16px
+    calc(8px + env(safe-area-inset-left));
   border-bottom: 1px solid rgb(255 255 255 / 12%);
 }
 
 .header h1 {
+  grid-column: 2;
   margin: 0;
   font-size: 1.45rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .back {
-  position: absolute;
+  position: relative;
   display: block;
-  left: 22px;
-  bottom: 28px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 44px;
+  height: 44px;
+  color: inherit;
+}
+
+.back::before {
+  position: absolute;
+  top: 13px;
+  left: 15px;
   width: 18px;
   height: 18px;
   border-bottom: 3px solid currentColor;
   border-left: 3px solid currentColor;
-  color: inherit;
+  content: "";
   transform: rotate(45deg);
 }
 
 .content {
   padding:
     18px
-    max(16px, env(safe-area-inset-right))
-    max(28px, env(safe-area-inset-bottom))
-    max(16px, env(safe-area-inset-left));
+    calc(16px + env(safe-area-inset-right))
+    calc(28px + env(safe-area-inset-bottom))
+    calc(16px + env(safe-area-inset-left));
 }
 
 .card {

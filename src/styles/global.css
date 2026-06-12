@@ -13,12 +13,14 @@
 
 html {
   min-width: 320px;
+  background: #0057a6;
 }
 
 body {
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0;
+  background: #0057a6;
 }
 
 button,
