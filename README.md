@@ -1,6 +1,6 @@
-# Appless Tesc* UK
+# Appless T*sco UK
 
-This website allows you to access your UK Tesc* Clubcard without downloading its app. Enter your Clubcard number and the barcode will be available for scanning.
+This website allows you to access your UK T*sco Clubcard without downloading its app. Enter your Clubcard number and the barcode will be available for scanning.
 
 ## Commands
 

@@ -1,7 +1,7 @@
 {
-  "name": "Appless Tesc* UK",
-  "short_name": "Tesc*",
-  "description": "A lightweight Tesc* companion website.",
+  "name": "Appless T*sco UK",
+  "short_name": "T*sco",
+  "description": "A lightweight T*sco companion website.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
