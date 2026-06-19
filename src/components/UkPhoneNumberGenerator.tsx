@@ -43,9 +43,8 @@ export default function UkPhoneNumberGenerator() {
         </button>
       </div>
       <p>
-        For formatting reference only. This is in an unallocated phone number
-        range. Do not use this where accurate or verifiable contact information
-        is required.
+        This is not a real working number! It is in an unallocated number
+        range.
       </p>
     </section>
   );
